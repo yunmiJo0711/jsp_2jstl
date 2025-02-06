@@ -35,7 +35,7 @@
 		<li>나이 : <c:out value="${customer.age }"/></li>
 		<li>가입날짜 : <c:out value="${customer.regDate }"/></li>
 	</ul>
-	
+<!--  -->
 	
 	
 	
