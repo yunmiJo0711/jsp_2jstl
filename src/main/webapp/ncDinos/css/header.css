@@ -1,0 +1,124 @@
+/* 
+      크기 기본 단위  : px
+      1rem 은 html 최상위 요소의 font-size 입니다. 기본값 16px
+      nc dinos 는 html font-size : 62.5%;  설정. => 10px
+      지금 작업하는 css 는 1rem = 10px;
+
+      => body 태그 font-size 는 16px 로 변경했습니다.
+*/
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* 블록요소가 겹쳐졌을 때(position 속성 absolute, fixed,sticky 일 때,)
+    z-index 값이 큰 값이 위로 올라옵니다. 값은 다른 요소 고려해서
+    임의로 큰값 설정합니다.
+  */
+  z-index: 9;
+}
+
+.sub-wrap{
+  width: 100%;
+  background-color: #04152b;
+}
+
+.sub-wrap .sub-con {
+  /* 자식 요소 ul 태그 2개에 적용 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1280px;
+    height: 36px;
+    padding: 4px;
+    /*  위, 아래 마진은 0 이고 좌우 마진은 자신 요소가 부모의 중앙에 오도록 자동 설정(auto) */
+    margin: 0 auto;
+}
+
+.sub-wrap .sub-con .site-tab {
+  /*  ul 태그안의 li 를 row 배치 */
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.sub-wrap .sub-con .site-tab > li {
+  font-size: 12px;
+  color: #fff;
+  /*  위 아래 여백은 0, 좌우 20px */
+  padding: 0 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sub-wrap .sub-con .user-tab {
+  display: flex;
+  align-items: center;
+}
+/* ul 태그 */
+.sub-wrap .sub-con .user-tab > li {
+  color : #fff;
+  padding: 0 10px;
+  font-size: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+/*  li 요소 선택 -> 뒤에 나오는 형제 선택  -> 형제의 가상요소 before 에 설정합니다.  */
+.sub-wrap .sub-con .user-tab > li + li::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 1px;
+  height: 10px;
+  background-color: rgba(255,255,255,0.5);
+}
+
+
+.nav-wrap {
+  width: 100%;
+  background-color: #071d3d;
+}
+
+.nav-wrap .nav-con {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1280px;
+  height: 94px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.nav-wrap .nav-con > img {
+  height: 40px;
+}
+
+.nav-wrap .nav-con .gnb-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 100px;
+}
+
+.nav-wrap .nav-con .gnb-wrap > li {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+i {
+  /* 인라인 요소를 블록 요소로 변경 */
+  display: block;
+  background-size: contain;
+}
+
+/*  img 태그를 사용하지 않고 박스 모델의 백그라운드 이미지로 표시함. */
+i.ic-search {
+  width: 20px;
+  height: 20px;
+  background-image: url(img/ico/ic-search@2x.png);
+}

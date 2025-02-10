@@ -1,0 +1,170 @@
+/* 왼쪽 사이드 메뉴(네비게이션), 상품목록 CSS  */
+#container {
+    width: 100%;
+    /* 100vh는 화면의 전체 높이 , 100vw 는 화면의 전체 너비
+       뷰 높이 에서 130px 을 뺀 크기를 최소 높이로 합니다.
+       뺄셈 기호 양쪽에 공백 꼭 필요.
+    */
+    min-height: calc(100vh - 130px);
+    margin-top: 130px;    
+}
+
+#contents {
+  /* 상단 메뉴 크기와 같도록 함. */
+  width: 1280px;
+  /* 상 0, 오른 40px, 아래 90px,오른 40px */
+  padding: 0 40px 90px;   
+  /* padding: 0 20px 는 상하 0, 좌우 20px */
+  /* padding: 0 40px 90px 20px ; 시계방향으로 모두 다른값 설정   */
+  margin: 0 auto;
+  background-color: beige;
+}
+
+#cont-wrap {
+  width: calc(100% - 224px);
+  display: inline-block;
+}
+
+/* 현재 메뉴 위치 표시 */
+.depth {
+  padding-top: 40px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.depth > li {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #747474;
+  /* vertical-align: baseline; */
+}
+
+/*  헤더의 돋보기 i 태그, 
+ic-home 각각 스타일 작성했으나 아래처럼 합쳐서 해도 됩니다. */
+i.ic-home {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-image: url(img/ico/ic-home@2x.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* depth 의 자식 중 마지막 태그 */
+.depth > li:last-child {
+  font-weight: 700;
+  color: #071d3d;
+}
+
+/* 헤더의 가상 요소를 한번 더 활용 */
+.depth > li + li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 12px;
+  margin: 0 10px;
+  background-image: url(img/ico/ic-depth@2x.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.item-list > li {
+      /* float 스타일이 적용된 요소는 부모 요소에서 벗어납니다. */
+      float: left;
+      margin: 8px 8px 50px;
+}
+
+
+
+/* 상품 이미지 목록 */
+.item-list > li > .img {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    border: 1px solid #e4e4e4;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.item-list > li > .desc {
+  margin-top: 20px;
+}
+
+.item-list > li > .desc > h6 {
+  width: 220px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.item-list .price {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.item-list .won {
+  font-size: 18px;
+  font-weight: initial;
+  margin-left: 2px;
+  vertical-align: center;
+}
+
+.item-list .label-wrap {
+  margin-top: 10px;
+}
+
+.item-list .label {
+  display: inline-block;
+  height: 16px;
+  padding: 0 4px;
+  /* 수평 정렬 */
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  /* line-height: 16px; */
+}
+
+.label.blue {
+  background-color: #5b8ebd;
+}
+
+.label.gray {
+  background-color: #747474;
+}
+
+/* 왼쪽 메뉴 */
+#left-menu {
+  width: 150px;
+  margin-top: 22px;
+  margin-right: 70px;
+  display: inline-block;
+  /* border: 1px dashed brown; */
+  vertical-align: top;
+}
+
+/* 자식 태그 li  */
+#left-menu>li {
+  cursor: pointer;
+}
+
+#left-menu>li>span {
+  display: block;
+  padding: 18px 0;
+  border-bottom: 1px solid #e4e4e4;
+  font-size: 14px;
+  font-weight: 700;
+
+  /* 아이콘 표시 : 백그라운 이미지로 합니다. */
+  background-image: url(img/ico/ic-menu-down@2x.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 16px;
+}
