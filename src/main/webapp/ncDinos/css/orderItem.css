@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* CSS 변경하고 확인할 때. Ctrl+F5 */
+
+.container{
+display: flex; width: 800px; margin: auto;
+}
+.img-box{
+width:500px; height: 550px;
+}
+.cont-box{
+margin-left: 20px; width: 300px;
+}
+.orderCount{
+border-bottom: 1px solid gray; border-top: 1px solid gray
+}
+.orderCount > input{
+text-align: right;
+padding: 3px 5px; margin: 10px; font-size: 1.3rem;
+}
+.orderButton{
+	margin-top: 20px;
+}
+button {
+padding: 5px 10px; font-size: 1.3rem
+}

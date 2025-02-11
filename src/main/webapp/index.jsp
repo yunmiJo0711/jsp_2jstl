@@ -17,17 +17,18 @@
 		<h3>2JSTL 프로젝트의 메뉴입니다.</h3>
 		<ul>
 		<!-- (UserAccountVO)session.getAttribute("user") 를 EL에서 -->	
-			<c:if test="${user ne null }">  <!-- ne : not equal [!=] -->
+			<c:if test="${user ne null }">  <!-- ne : not equal : 같지 않다. [!=] -->
 					<li>로그인 사용자</li>
 					<li> 아이디 : ${user.userid }</li>
 					<li> 이름 : ${user.username }</li>
 					<li> 이메일 :${user.email }</li>
 					<li><a href="5_logout.jsp">로그아웃</a></li>  <!-- 로그인 상태일 때만 나오는 메뉴 -->	
 			</c:if>
-			<c:if test="${user eq null }">  <!-- eq : equal [==] -->
+			<c:if test="${user eq null }">  <!-- eq : equal : 같다. [==] -->
 					<li><a href="/1start/4_register.jsp">회원가입</a></li> <!-- 로그인 상태일 때가 아닐 때 나오는 메뉴 -->
 					<li><a href="5_login.jsp">로그인</a></li> <!-- 로그인 상태일 때가 아닐 때 나오는 메뉴 -->
 			</c:if>
+					<li><a href="ncDinos/shop_item.jsp">NCDinos 팬 상품</a></li>
 		</ul>
 		
 </body>
